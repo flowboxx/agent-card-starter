@@ -1,0 +1,15 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "example.beispiel-dachdecker/tuer",
+  "title": "Beispiel Dachdecker GmbH",
+  "version": "1.0.0",
+  "description": "Fiktives Beispiel. Leistungen abfragen und eine Anfrage hinterlassen.",
+  "websiteUrl": "https://www.beispiel-dachdecker.example",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://tuer.beispiel-dachdecker.example/mcp",
+      "supportedProtocolVersions": ["2025-06-18"]
+    }
+  ]
+}

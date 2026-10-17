@@ -1,0 +1,60 @@
+// Annotated copy of examples/well-known/agent-card.json (documentation only).
+// Kommentierte Kopie von examples/well-known/agent-card.json (nur zur Erklärung).
+// The tests make sure this file equals the plain JSON once comments are removed.
+{
+  // Name of the business as customers know it. / Name des Betriebs.
+  "name": "Beispiel Dachdecker GmbH",
+  // One or two plain sentences: what, for whom, where. No marketing claims you cannot prove.
+  // Ein bis zwei schlichte Sätze: was, für wen, wo. Keine Versprechen, die Sie nicht belegen können.
+  "description": "Fiktives Beispiel. Dachdeckerbetrieb für Neubau, Sanierung und Reparatur von Steildächern und Flachdächern im Raum Musterstadt.",
+  // Version of YOUR card. Raise it when content changes. / Version Ihrer Karte, bei Änderung erhöhen.
+  "version": "1.0.0",
+  // Where an assistant can talk to you. At least one entry, https only.
+  // Wo ein Assistent mit Ihnen sprechen kann. Mindestens ein Eintrag, nur https.
+  "supportedInterfaces": [
+    {
+      "url": "https://tuer.beispiel-dachdecker.example/mcp",
+      // The protocol the endpoint speaks. Be honest: this one speaks MCP.
+      // Das Protokoll des Endpunkts. Ehrlich angeben: dieser spricht MCP.
+      "protocolBinding": "MCP",
+      "protocolVersion": "2025-06-18"
+    }
+  ],
+  // Who runs the service. / Wer den Dienst betreibt.
+  "provider": {
+    "organization": "Beispiel Dachdecker GmbH",
+    "url": "https://www.beispiel-dachdecker.example"
+  },
+  // Human readable page about the services. / Seite für Menschen mit den Leistungen.
+  "documentationUrl": "https://www.beispiel-dachdecker.example/leistungen",
+  // Only switch on what you really support. / Nur anschalten, was wirklich geht.
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["application/json"],
+  "defaultOutputModes": ["application/json"],
+  // One skill per service you really offer. Keep ids stable.
+  // Eine Fähigkeit je Leistung, die Sie wirklich anbieten. Ids stabil halten.
+  "skills": [
+    {
+      "id": "dachsanierung",
+      "name": "Dachsanierung",
+      "description": "Sanierung von Steildächern, Neueindeckung, Dämmung. Einsatzgebiet Musterstadt und 30 km Umkreis.",
+      "tags": ["dach", "sanierung", "musterstadt"]
+    },
+    {
+      "id": "flachdach",
+      "name": "Flachdach abdichten",
+      "description": "Abdichtung und Reparatur von Flachdächern an Wohn- und Gewerbegebäuden.",
+      "tags": ["flachdach", "abdichtung", "reparatur"]
+    },
+    {
+      "id": "anfrage",
+      "name": "Anfrage hinterlassen",
+      // Say clearly that a human decides. / Klar sagen, dass ein Mensch entscheidet.
+      "description": "Eine Anfrage anlegen. Ein Mensch im Betrieb meldet sich zurück. Keine Zusage und kein Preis durch den Assistenten.",
+      "tags": ["anfrage", "kontakt"]
+    }
+  ]
+}

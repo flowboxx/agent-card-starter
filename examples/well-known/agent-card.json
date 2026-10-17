@@ -1,0 +1,43 @@
+{
+  "name": "Beispiel Dachdecker GmbH",
+  "description": "Fiktives Beispiel. Dachdeckerbetrieb für Neubau, Sanierung und Reparatur von Steildächern und Flachdächern im Raum Musterstadt.",
+  "version": "1.0.0",
+  "supportedInterfaces": [
+    {
+      "url": "https://tuer.beispiel-dachdecker.example/mcp",
+      "protocolBinding": "MCP",
+      "protocolVersion": "2025-06-18"
+    }
+  ],
+  "provider": {
+    "organization": "Beispiel Dachdecker GmbH",
+    "url": "https://www.beispiel-dachdecker.example"
+  },
+  "documentationUrl": "https://www.beispiel-dachdecker.example/leistungen",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["application/json"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "dachsanierung",
+      "name": "Dachsanierung",
+      "description": "Sanierung von Steildächern, Neueindeckung, Dämmung. Einsatzgebiet Musterstadt und 30 km Umkreis.",
+      "tags": ["dach", "sanierung", "musterstadt"]
+    },
+    {
+      "id": "flachdach",
+      "name": "Flachdach abdichten",
+      "description": "Abdichtung und Reparatur von Flachdächern an Wohn- und Gewerbegebäuden.",
+      "tags": ["flachdach", "abdichtung", "reparatur"]
+    },
+    {
+      "id": "anfrage",
+      "name": "Anfrage hinterlassen",
+      "description": "Eine Anfrage anlegen. Ein Mensch im Betrieb meldet sich zurück. Keine Zusage und kein Preis durch den Assistenten.",
+      "tags": ["anfrage", "kontakt"]
+    }
+  ]
+}
