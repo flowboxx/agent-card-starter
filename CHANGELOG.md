@@ -3,6 +3,11 @@
 All notable changes are listed here. Format: [Keep a Changelog](https://keepachangelog.com), versions follow [SemVer](https://semver.org).
 Alle wichtigen Änderungen stehen hier. Format wie Keep a Changelog, Versionen nach SemVer.
 
+## [0.1.1] - 2026-10-17
+
+### Added
+- Dockerfile for the example MCP server (python:3.12-slim, stdio, non-root) and a CI job that builds it and checks `initialize` and `tools/list`.
+
 ## [0.1.0] - 2026-10-17
 
 First public release / Erste öffentliche Fassung.

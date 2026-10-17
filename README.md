@@ -39,6 +39,7 @@ python3 tools/validate_agent_card.py examples/well-known/agent-card.json
 python3 tools/validate_agent_card.py examples/mcp-server-card.json --strict
 printf '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n' | python3 server/mcp_server.py
 python3 -m pip install pytest && python3 -m pytest -q
+docker build -t agent-card-starter . && docker run -i --rm agent-card-starter   # MCP over stdio
 ```
 
 ### Use it for your business
@@ -83,6 +84,7 @@ python3 tools/validate_agent_card.py examples/well-known/agent-card.json
 python3 tools/validate_agent_card.py examples/mcp-server-card.json --strict
 printf '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n' | python3 server/mcp_server.py
 python3 -m pip install pytest && python3 -m pytest -q
+docker build -t agent-card-starter . && docker run -i --rm agent-card-starter   # MCP over stdio
 ```
 
 ### Für den eigenen Betrieb nutzen

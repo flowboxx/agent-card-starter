@@ -24,3 +24,14 @@ jobs:
       - run: python tools/validate_agent_card.py examples/well-known/agent-card.json
       - run: python tools/validate_agent_card.py examples/mcp-server-card.json --strict
       - run: python -m pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t agent-card-starter .
+      - name: MCP introspection over stdio
+        run: |
+          printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ci","version":"0"}}}' '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
+            | docker run -i --rm agent-card-starter | tee out.txt
+          grep -q '"leistungen"' out.txt
