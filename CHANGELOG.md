@@ -3,7 +3,7 @@
 All notable changes are listed here. Format: [Keep a Changelog](https://keepachangelog.com), versions follow [SemVer](https://semver.org).
 Alle wichtigen Änderungen stehen hier. Format wie Keep a Changelog, Versionen nach SemVer.
 
-## [0.2.0] - unreleased
+## [0.2.0] - 2026-10-26
 
 ### Added
 - Installable package `agent-card-starter` with the command `agent-card`: `init` writes a first agent card, `validate` checks cards (same checks as before).
