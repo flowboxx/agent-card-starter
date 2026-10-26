@@ -1,5 +1,7 @@
 # agent-card-starter
 
+<!-- mcp-name: io.github.flowboxx/agent-card-starter -->
+
 [![tests](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 ![license MIT](https://img.shields.io/badge/license-MIT-blue)
 ![python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)
@@ -7,7 +9,7 @@
 **In 60 seconds:** AI assistants read a small JSON file to learn what your business does. This tool writes that file for you and checks it. Offline, no account, no dependencies.
 
 ```bash
-pip install git+https://github.com/flowboxx/agent-card-starter
+pip install agent-card-starter
 agent-card init --name "Muster Roofing Ltd" --description "Roofer in Musterstadt, repairs and new roofs." --website https://www.example.com --skill "Flat roof sealing"
 agent-card validate .well-known/agent-card.json --strict
 ```

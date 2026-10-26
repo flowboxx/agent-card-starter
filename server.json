@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.flowboxx/agent-card-starter",
+  "title": "Agent Card Starter",
+  "description": "Starter kit for small businesses: A2A agent card, MCP server card, example MCP server, validator.",
+  "repository": {
+    "url": "https://github.com/flowboxx/agent-card-starter",
+    "source": "github"
+  },
+  "websiteUrl": "https://flowboxx.de/",
+  "version": "0.2.1",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "agent-card-starter",
+      "version": "0.2.1",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

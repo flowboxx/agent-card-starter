@@ -3,6 +3,12 @@
 All notable changes are listed here. Format: [Keep a Changelog](https://keepachangelog.com), versions follow [SemVer](https://semver.org).
 Alle wichtigen Änderungen stehen hier. Format wie Keep a Changelog, Versionen nach SemVer.
 
+## [0.2.1] - 2026-10-26
+
+### Added
+- Command `agent-card-server`: the example MCP server (stdio) now ships inside the package, so `uvx agent-card-starter` style launchers and the official MCP Registry can start it. `server/mcp_server.py` stays as a thin wrapper.
+- `server.json` and the `mcp-name` marker for the official MCP Registry. Package on PyPI: `pip install agent-card-starter`.
+
 ## [0.2.0] - 2026-10-26
 
 ### Added

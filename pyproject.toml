@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-card-starter"
-version = "0.2.0"
+version = "0.2.1"
 description = "Make a small business readable for AI assistants: write and check an A2A agent card or MCP server card. Standard library only."
 readme = "README.md"
 license = { text = "MIT" }
@@ -26,6 +26,7 @@ Issues = "https://github.com/flowboxx/agent-card-starter/issues"
 
 [project.scripts]
 agent-card = "agent_card.cli:main"
+agent-card-server = "agent_card.mcp_server:main"
 
 [tool.setuptools]
 packages = ["agent_card"]
