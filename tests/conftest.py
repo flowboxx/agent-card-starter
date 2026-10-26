@@ -4,3 +4,4 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 for sub in ("tools", "server"):
     sys.path.insert(0, os.path.join(ROOT, sub))
+sys.path.insert(0, ROOT)

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-card-starter"
+version = "0.2.0"
+description = "Make a small business readable for AI assistants: write and check an A2A agent card or MCP server card. Standard library only."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "flowboxx", email = "kontakt@flowboxx.de" }]
+keywords = ["a2a", "agent-card", "mcp", "mcp-server-card", "well-known", "small-business"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Developers",
+  "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://flowboxx.de/"
+Source = "https://github.com/flowboxx/agent-card-starter"
+Issues = "https://github.com/flowboxx/agent-card-starter/issues"
+
+[project.scripts]
+agent-card = "agent_card.cli:main"
+
+[tool.setuptools]
+packages = ["agent_card"]
+
+[tool.setuptools.package-data]
+agent_card = ["data/*.json"]

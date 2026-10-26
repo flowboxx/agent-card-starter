@@ -1,0 +1,31 @@
+{
+  "name": "{name}",
+  "description": "{description}",
+  "version": "1.0.0",
+  "supportedInterfaces": [
+    {
+      "url": "{endpoint}",
+      "protocolBinding": "MCP",
+      "protocolVersion": "2025-06-18"
+    }
+  ],
+  "provider": {
+    "organization": "{name}",
+    "url": "{website}"
+  },
+  "documentationUrl": "{website}",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["application/json"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "anfrage",
+      "name": "Anfrage hinterlassen",
+      "description": "Eine Anfrage anlegen. Ein Mensch im Betrieb meldet sich zurück. Keine Zusage und kein Preis durch den Assistenten.",
+      "tags": ["anfrage", "kontakt"]
+    }
+  ]
+}

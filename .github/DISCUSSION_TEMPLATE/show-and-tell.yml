@@ -1,0 +1,22 @@
+title: "Built with agent-card-starter: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Show us what you built. A link to your card is enough. Please no private data and no customer secrets.
+        Zeigen Sie uns, was Sie gebaut haben. Ein Link zur Karte reicht. Bitte keine privaten Daten.
+  - type: input
+    id: link
+    attributes:
+      label: Link to your agent card or server card / Link zur Karte
+      placeholder: https://example.com/.well-known/agent-card.json
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What does your business offer, and what did you change? / Was bieten Sie an, was haben Sie angepasst?
+  - type: textarea
+    id: stuck
+    attributes:
+      label: Anything unclear or missing? / Was war unklar oder fehlte?
