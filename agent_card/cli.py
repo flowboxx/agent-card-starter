@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 from importlib import resources
 
@@ -12,7 +13,28 @@ def _template() -> str:
     return resources.files("agent_card").joinpath("data/agent-card.template.json").read_text(encoding="utf-8")
 
 
-def build_card(name: str, description: str, website: str, endpoint: str) -> dict:
+def _slug(text: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "-", text.lower().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")).strip("-")
+    return s or "leistung"
+
+
+def skills_from(items) -> list:
+    """`--skill "Name"` or `--skill "Name: one sentence"`. Ids are made from the name and stay stable."""
+    out, seen = [], set()
+    for raw in items:
+        name, _, desc = raw.partition(":")
+        name, desc = name.strip(), desc.strip()
+        if not name:
+            continue
+        sid, n = _slug(name), 2
+        while sid in seen:
+            sid, n = "%s-%d" % (_slug(name), n), n + 1
+        seen.add(sid)
+        out.append({"id": sid, "name": name, "description": desc or name + ".", "tags": [_slug(name)]})
+    return out
+
+
+def build_card(name: str, description: str, website: str, endpoint: str, skills=None) -> dict:
     """Fill the template. Values go through json so quotes in names cannot break the file."""
     card = json.loads(_template())
 
@@ -24,13 +46,16 @@ def build_card(name: str, description: str, website: str, endpoint: str) -> dict
         if isinstance(x, dict):
             return {k: fill(v) for k, v in x.items()}
         return x
-    return fill(card)
+    card = fill(card)
+    if skills:
+        card["skills"] = skills + card["skills"]      # the inquiry skill stays last
+    return card
 
 
 def cmd_init(a) -> int:
     website = a.website.rstrip("/")
     endpoint = a.endpoint or website + "/mcp"
-    card = build_card(a.name, a.description, website, endpoint)
+    card = build_card(a.name, a.description, website, endpoint, skills_from(a.skill))
     errors, warnings = validator.validate(card, "agent-card")
     if errors:
         for m in errors:
@@ -66,6 +91,7 @@ def main(argv=None) -> int:
     i.add_argument("--description", required=True, help="one or two sentences: what you do and where")
     i.add_argument("--website", required=True, help="https URL of your website")
     i.add_argument("--endpoint", default="", help="https URL of an endpoint you really operate (default: <website>/mcp)")
+    i.add_argument("--skill", action="append", default=[], metavar="NAME[: SENTENCE]", help="one service you really offer, repeat for more")
     i.add_argument("--out", default=".", help="folder to write into (default: current folder)")
     i.add_argument("--force", action="store_true", help="overwrite an existing card")
     a = ap.parse_args(argv)

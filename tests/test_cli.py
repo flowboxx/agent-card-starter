@@ -39,3 +39,13 @@ def test_validate_subcommand_and_old_script_agree():
 
 def test_package_carries_its_template():
     assert "{name}" in cli._template()
+
+
+def test_init_skills_become_stable_ids_and_keep_the_inquiry_skill_last(tmp_path):
+    args = ["init", "--name", "A", "--description", "B", "--website", "https://x.example", "--out", str(tmp_path),
+            "--skill", "Flachdach abdichten", "--skill", "Dämmung: Dach und Keller dämmen.", "--skill", "Flachdach abdichten"]
+    assert cli.main(args) == 0
+    card = json.loads((tmp_path / ".well-known" / "agent-card.json").read_text(encoding="utf-8"))
+    ids = [s["id"] for s in card["skills"]]
+    assert ids == ["flachdach-abdichten", "daemmung", "flachdach-abdichten-2", "anfrage"]
+    assert card["skills"][1]["description"] == "Dach und Keller dämmen." and validator.validate(card, "agent-card") == ([], [])

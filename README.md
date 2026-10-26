@@ -8,7 +8,7 @@
 
 ```bash
 pip install git+https://github.com/flowboxx/agent-card-starter
-agent-card init --name "Muster Roofing Ltd" --description "Roofer in Musterstadt, repairs and new roofs." --website https://www.example.com
+agent-card init --name "Muster Roofing Ltd" --description "Roofer in Musterstadt, repairs and new roofs." --website https://www.example.com --skill "Flat roof sealing"
 agent-card validate .well-known/agent-card.json --strict
 ```
 
