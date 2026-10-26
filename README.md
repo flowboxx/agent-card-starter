@@ -4,6 +4,20 @@
 ![license MIT](https://img.shields.io/badge/license-MIT-blue)
 ![python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)
 
+**In 60 seconds:** AI assistants read a small JSON file to learn what your business does. This tool writes that file for you and checks it. Offline, no account, no dependencies.
+
+```bash
+pip install git+https://github.com/flowboxx/agent-card-starter
+agent-card init --name "Muster Roofing Ltd" --description "Roofer in Musterstadt, repairs and new roofs." --website https://www.example.com
+agent-card validate .well-known/agent-card.json --strict
+```
+
+Upload the file to `https://<your-domain>/.well-known/agent-card.json` and you are readable. Nothing here guarantees that an assistant will mention you.
+
+**In 60 Sekunden:** KI-Assistenten lesen eine kleine Datei, um zu erfahren, was Ihr Betrieb macht. Dieses Werkzeug schreibt die Datei und prüft sie. Ohne Netz, ohne Konto, ohne Fremdpakete. Befehle siehe oben, die Datei kommt nach `https://<Ihre-Domain>/.well-known/agent-card.json`.
+
+<!-- Picture idea: a 20 second terminal recording (init, then validate with OK) of the three commands above. Fictional business only. -->
+
 Starter kit to make a small business readable and reachable for AI assistants:
 an A2A agent card, an MCP server card, a minimal MCP example server and a validator.
 Standard library only, Python 3.9+, MIT licensed.
@@ -29,12 +43,16 @@ Gepflegt von [flowboxx](https://flowboxx.de/?ref=github), einer Agentur, die KI-
 | `examples/mcp-server-card.json` | MCP server card for the same business |
 | `templates/` | Blank-ish templates: server card and AI catalog |
 | `server/mcp_server.py` | MCP example server over stdio: tools `leistungen` and `anfrage_anlegen` (stub) |
-| `tools/validate_agent_card.py` | Offline validator for agent card, server card and catalog |
+| `agent_card/` | The `agent-card` command: `init` writes a first card, `validate` checks card, server card and catalog (offline) |
+| `tools/validate_agent_card.py` | Same validator as a plain script |
 | `tests/` | pytest suite |
 
 ### Quick start
 
 ```bash
+agent-card init --name "Your Business" --description "What you do and where." --website https://www.example.com
+agent-card validate .well-known/agent-card.json --strict
+# from a clone, without installing:
 python3 tools/validate_agent_card.py examples/well-known/agent-card.json
 python3 tools/validate_agent_card.py examples/mcp-server-card.json --strict
 printf '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n' | python3 server/mcp_server.py
@@ -74,12 +92,16 @@ docker build -t agent-card-starter . && docker run -i --rm agent-card-starter   
 | `examples/mcp-server-card.json` | MCP-Server-Karte für denselben Betrieb |
 | `templates/` | Vorlagen: Server-Karte und KI-Katalog |
 | `server/mcp_server.py` | MCP-Beispielserver über stdio: Werkzeuge `leistungen` und `anfrage_anlegen` (Stub) |
-| `tools/validate_agent_card.py` | Prüfskript ohne Netz für Agentenkarte, Server-Karte und Katalog |
+| `agent_card/` | Der Befehl `agent-card`: `init` schreibt eine erste Karte, `validate` prüft Karte, Server-Karte und Katalog (ohne Netz) |
+| `tools/validate_agent_card.py` | Dasselbe Prüfskript als einfache Datei |
 | `tests/` | pytest-Tests |
 
 ### Schnellstart
 
 ```bash
+agent-card init --name "Ihr Betrieb" --description "Was Sie tun und wo." --website https://www.example.com
+agent-card validate .well-known/agent-card.json --strict
+# aus einem Klon, ohne Installation:
 python3 tools/validate_agent_card.py examples/well-known/agent-card.json
 python3 tools/validate_agent_card.py examples/mcp-server-card.json --strict
 printf '{"jsonrpc":"2.0","id":1,"method":"tools/list"}\n' | python3 server/mcp_server.py
@@ -104,6 +126,18 @@ docker build -t agent-card-starter . && docker run -i --rm agent-card-starter   
   das Schema kann sich noch ändern. Vor dem Veröffentlichen das aktuelle Schema prüfen.
 - Das Prüfskript prüft Pflichtfelder und einige Plausibilitäten, keine vollständige JSON-Schema-Validierung.
 - Nichts hier garantiert, dass ein Assistent Sie nennt oder empfiehlt.
+
+---
+
+## Built with this? Tell us / Damit gebaut? Erzählen Sie es uns
+
+If you published a card with this kit, show it in [Discussions, Show and tell](../../discussions/categories/show-and-tell). We read every one. If you like, add the badge to your README:
+
+Wenn Sie mit diesem Kit eine Karte veröffentlicht haben, zeigen Sie sie unter [Discussions, Show and tell](../../discussions/categories/show-and-tell). Das Abzeichen für Ihre README:
+
+```markdown
+[![built with agent-card-starter](https://img.shields.io/badge/built%20with-agent--card--starter-2b6cb0)](https://github.com/flowboxx/agent-card-starter)
+```
 
 ---
 
