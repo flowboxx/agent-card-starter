@@ -13,7 +13,7 @@ def files():
     for d, dirs, fs in os.walk(ROOT):
         dirs[:] = [x for x in dirs if x not in (".git", "__pycache__", ".pytest_cache")]
         for f in fs:
-            if f == "test_hygiene.py" or f.endswith(".pyc"):
+            if f == "test_hygiene.py" or f.endswith(".pyc") or f == "glama.json":   # glama.json must name the maintainer account (GitHub handle)
                 continue
             yield os.path.join(d, f)
 
