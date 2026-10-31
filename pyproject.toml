@@ -37,7 +37,7 @@ Source = "https://github.com/flowboxx/agent-card-starter"
 Issues = "https://github.com/flowboxx/agent-card-starter/issues"
 Documentation = "https://github.com/flowboxx/agent-card-starter#readme"
 Changelog = "https://github.com/flowboxx/agent-card-starter/blob/main/CHANGELOG.md"
-"Open Door for AI Assistants" = "https://flowboxx.de/open-door/"
+"Open Door for AI Assistants" = "https://flowboxx.de/open-door/en/"
 
 [project.scripts]
 agent-card = "agent_card.cli:main"
