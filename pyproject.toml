@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agent-card-starter"
 version = "0.2.2"
-description = "Make a small business readable for AI assistants: write and check an A2A agent card or MCP server card. Offline, standard library only. Built by the makers of Open Door for AI Assistants, where an AI assistant can also leave an inquiry for the business."
+description = "Make a small business readable for AI assistants: write and check an A2A agent card or MCP server card. Offline, standard library only. Built by the makers of Open Door for AI Assistants, where an AI assistant will be able to leave an inquiry for the business (inquiry service coming soon)."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.9"
