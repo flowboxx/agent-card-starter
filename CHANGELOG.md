@@ -3,6 +3,11 @@
 All notable changes are listed here. Format: [Keep a Changelog](https://keepachangelog.com), versions follow [SemVer](https://semver.org).
 Alle wichtigen Änderungen stehen hier. Format wie Keep a Changelog, Versionen nach SemVer.
 
+## [0.2.2] - 2026-10-31
+
+### Changed
+- Package metadata only, no code change: Trove classifiers (beta, OS independent, English and German, Python 3.9 to 3.13, topics), more keywords, project URLs (documentation, changelog, Open Door), and a description that names the difference: with Open Door for AI Assistants an AI assistant can also leave an inquiry for the business.
+
 ## [0.2.1] - 2026-10-26
 
 ### Added

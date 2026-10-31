@@ -6,6 +6,8 @@
 ![license MIT](https://img.shields.io/badge/license-MIT-blue)
 ![python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)
 
+Write and check the machine-readable card that makes a small business readable for AI assistants. Its WordPress sibling, Open Door for AI Assistants, goes one step further: an AI assistant can leave an inquiry for the business, and the business gets it as an e-mail.
+
 **In 60 seconds:** AI assistants read a small JSON file to learn what your business does. This tool writes that file for you and checks it. Offline, no account, no dependencies.
 
 ```bash

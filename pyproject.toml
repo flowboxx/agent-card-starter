@@ -4,18 +4,30 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-card-starter"
-version = "0.2.1"
-description = "Make a small business readable for AI assistants: write and check an A2A agent card or MCP server card. Standard library only."
+version = "0.2.2"
+description = "Make a small business readable for AI assistants: write and check an A2A agent card or MCP server card. Offline, standard library only. Built by the makers of Open Door for AI Assistants, where an AI assistant can also leave an inquiry for the business."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.9"
 authors = [{ name = "flowboxx", email = "kontakt@flowboxx.de" }]
-keywords = ["a2a", "agent-card", "mcp", "mcp-server-card", "well-known", "small-business"]
+keywords = ["a2a", "agent-card", "mcp", "mcp-server-card", "well-known", "small-business", "llms-txt", "agent-discovery", "ai-assistants", "wordpress"]
 classifiers = [
-  "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python :: 3",
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
   "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Natural Language :: German",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = []
 
@@ -23,6 +35,9 @@ dependencies = []
 Homepage = "https://flowboxx.de/"
 Source = "https://github.com/flowboxx/agent-card-starter"
 Issues = "https://github.com/flowboxx/agent-card-starter/issues"
+Documentation = "https://github.com/flowboxx/agent-card-starter#readme"
+Changelog = "https://github.com/flowboxx/agent-card-starter/blob/main/CHANGELOG.md"
+"Open Door for AI Assistants" = "https://flowboxx.de/open-door/"
 
 [project.scripts]
 agent-card = "agent_card.cli:main"
