@@ -2,6 +2,7 @@
 FROM python:3.12-slim
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
+COPY agent_card/ /app/agent_card/
 COPY server/ /app/server/
 COPY examples/ /app/examples/
 RUN useradd --no-create-home --uid 10001 mcp
